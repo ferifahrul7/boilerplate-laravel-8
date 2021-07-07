@@ -12,9 +12,9 @@
 */
 
 Route::group(['middleware' => ['get.menu']], function () {
-    // Route::get('/', function () {           return view('dashboard.homepage'); });
+    Route::get('/', function () {           return view('dashboard.homepage'); })->name('home');
     
-    Route::get('/', function () {           return view('welcome'); })->name('welcome');
+    // Route::get('/', function () {           return view('welcome'); })->name('welcome');
 
     Route::group(['middleware' => ['role:user']], function () {
         Route::get('/colors', function () {     return view('dashboard.colors'); });
@@ -103,6 +103,11 @@ Route::group(['middleware' => ['get.menu']], function () {
             Route::post('/update',  'MenuController@update')->name('menu.menu.update');
             Route::get('/delete',   'MenuController@delete')->name('menu.menu.delete');
         });
+
+        // Route::prefix('slider')->group(function(){
+            Route::resource('sliders', 'SliderController');
+        // });
+
         Route::prefix('media')->group(function () {
             Route::get('/',                 'MediaController@index')->name('media.folder.index');
             Route::get('/folder/store',     'MediaController@folderAdd')->name('media.folder.add');

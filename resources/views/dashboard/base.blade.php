@@ -39,10 +39,15 @@
     <link href="{{ asset('css/flag-icon.min.css') }}" rel="stylesheet"> <!-- icons -->
     <!-- Main styles for this application-->
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-
+    <style>
+      [v-cloak] {
+        display:none;
+      }
+    </style>
     @yield('css')
 
     <!-- Global site tag (gtag.js) - Google Analytics-->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -70,12 +75,13 @@
       @include('dashboard.shared.header')
 
       <div class="c-body">
-
-        <main class="c-main">
+      <div id="app">
+        <main class="c-main" id="app">
 
           @yield('content') 
 
         </main>
+      </div>
         @include('dashboard.shared.footer')
       </div>
     </div>
@@ -85,8 +91,9 @@
     <!-- CoreUI and necessary plugins-->
     <script src="{{ asset('js/coreui.bundle.min.js') }}"></script>
     <script src="{{ asset('js/coreui-utils.js') }}"></script>
+    <script src="{{ asset('lib/axios/axios.min.js') }}"></script>
     @yield('javascript')
-
+    @stack('scripts')
 
 
 

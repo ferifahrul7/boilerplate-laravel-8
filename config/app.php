@@ -176,6 +176,9 @@ return [
         App\Providers\RouteServiceProvider::class,
         
         Spatie\Permission\PermissionServiceProvider::class,
+        
+        //response service provider macro
+        App\Providers\ResponseServiceProvider::class,
     ],
 
     /*

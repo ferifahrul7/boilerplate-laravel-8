@@ -10,5 +10,5 @@ class Slider extends Model
     use HasFactory;
 
     protected $table    = 'sliders';
-    protected $fillable = ['judul', 'teks', 'slider'];
+    protected $fillable = ['judul', 'teks', 'slider','is_aktif'];
 }

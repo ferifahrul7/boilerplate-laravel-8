@@ -12,7 +12,7 @@
 */
 
 Route::group(['middleware' => ['get.menu']], function () {
-    Route::get('/', function () {           return view('dashboard.homepage'); })->name('home');
+    Route::get('/', function () {           return view('dashboard.homepage',['data' => 'test coba']); })->name('home');
     
     // Route::get('/', function () {           return view('welcome'); })->name('welcome');
 

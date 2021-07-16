@@ -10,7 +10,7 @@ use Spatie\Permission\Models\Role;
 use App\Models\User;
 use App\Models\RoleHierarchy;
 
-class UsersAndNotesSeeder extends Seeder
+class UsersSeeder extends Seeder
 {
     /**
      * Run the database seeds.
